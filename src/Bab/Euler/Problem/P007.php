@@ -18,11 +18,9 @@ class P007 implements ProblemInterface
      */
     public function resolve(OutputInterface $output)
     {
-        $i = 1;
         $primeNumber = 1;
-        while ($i <= 10001) {
+        for ($i = 1; $i <= 10001; $i++) {
             $primeNumber = Utils::getNextPrimeNumber($primeNumber);
-            $i++;
         }
 
         return $primeNumber;

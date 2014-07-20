@@ -13,15 +13,39 @@ class Utils
      */
     public static function getNextPrimeNumber($number)
     {
-        while (true) {
-            $number++;
-            $divisor = 2;
-            while (0 !== $number % $divisor) {
-                $divisor++;
-            }
-            if ($divisor === $number) {
-                return $number;
+        while (!self::isPrime(++$number)) {
+        }
+
+        return $number;
+    }
+
+    /**
+     * isPrime
+     *
+     * @param int $number
+     *
+     * @return boolean
+     */
+    public static function isPrime($number)
+    {
+        if ($number < 2) {
+            return false;
+        }
+
+        if (2 === $number) {
+            return true;
+        }
+
+        if (0 === $number % 2) {
+            return false;
+        }
+
+        for ($divisor = 3; $divisor <= ceil(sqrt($number)); $divisor += 2) {
+            if (0 === $number % $divisor) {
+                return false;
             }
         }
+
+        return true;
     }
 }
