@@ -1,0 +1,16 @@
+{
+    "require": {
+        "symfony/console": "2.5.2"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-0": {
+            "Bab\\Euler": "src"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "bin": ["rabbit"]
+}
