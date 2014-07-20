@@ -1,11 +1,7 @@
 <?php
 
-namespace Bab\Euler;
+namespace Bab\Euler\Problem;
 
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -17,16 +13,12 @@ use Symfony\Component\Console\Output\OutputInterface;
  * By considering the terms in the Fibonacci sequence whose values do not
  * exceed four million, find the sum of the even-valued terms.
  */
-class P2 extends Command
+class P2 implements ProblemInterface
 {
-    protected function configure()
-    {
-        $this
-            ->setName('euler:2')
-        ;
-    }
-
-    protected function execute(InputInterface $input, OutputInterface $output)
+    /**
+     * {@inheritDoc}
+     */
+    public function resolve(OutputInterface $output)
     {
         $fibonacci = [1, 2];
 
@@ -40,7 +32,7 @@ class P2 extends Command
             $fibonacci[] = $sum;
         }
 
-        $output->writeln(sprintf('Found %d numbers', count($fibonacci)));
+        $output->isVerbose() && $output->writeln(sprintf('Found %d numbers', count($fibonacci)));
 
         $sum = 0;
         foreach ($fibonacci as $value) {
@@ -49,6 +41,6 @@ class P2 extends Command
             }
         }
 
-        $output->writeln(sprintf('<info>Sum: %d</info>', $sum));
+        return $sum;
     }
 }
