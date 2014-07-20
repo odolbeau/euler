@@ -10,7 +10,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  *
  * Find the largest palindrome made from the product of two 3-digit numbers.
  */
-class P4 implements ProblemInterface
+class P004 implements ProblemInterface
 {
     /**
      * {@inheritDoc}

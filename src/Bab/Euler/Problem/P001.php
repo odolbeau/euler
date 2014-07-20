@@ -10,7 +10,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  *
  * Find the sum of all the multiples of 3 or 5 below 1000.
  */
-class P1 implements ProblemInterface
+class P001 implements ProblemInterface
 {
     /**
      * {@inheritDoc}

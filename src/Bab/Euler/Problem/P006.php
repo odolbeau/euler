@@ -19,7 +19,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  * Find the difference between the sum of the squares of the first one hundred
  * natural numbers and the square of the sum.
  */
-class P6 implements ProblemInterface
+class P006 implements ProblemInterface
 {
     /**
      * {@inheritDoc}

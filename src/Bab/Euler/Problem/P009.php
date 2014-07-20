@@ -15,7 +15,7 @@ use Bab\Euler\Utils;
  * There exists exactly one Pythagorean triplet for which a + b + c = 1000.
  * Find the product abc.
  */
-class P9 implements ProblemInterface
+class P009 implements ProblemInterface
 {
     /**
      * {@inheritDoc}

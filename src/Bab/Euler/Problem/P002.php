@@ -13,7 +13,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  * By considering the terms in the Fibonacci sequence whose values do not
  * exceed four million, find the sum of the even-valued terms.
  */
-class P2 implements ProblemInterface
+class P002 implements ProblemInterface
 {
     /**
      * {@inheritDoc}

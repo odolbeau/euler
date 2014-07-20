@@ -11,7 +11,7 @@ use Bab\Euler\Utils;
  *
  * What is the 10 001st prime number?
  */
-class P7 implements ProblemInterface
+class P007 implements ProblemInterface
 {
     /**
      * {@inheritDoc}

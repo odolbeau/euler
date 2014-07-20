@@ -11,7 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  * What is the smallest positive number that is evenly divisible by all of the
  * numbers from 1 to 20?
  */
-class P5 implements ProblemInterface
+class P005 implements ProblemInterface
 {
     /**
      * {@inheritDoc}

@@ -10,7 +10,7 @@ use Bab\Euler\Utils;
  *
  * What is the largest prime factor of the number 600851475143 ?
  */
-class P3 implements ProblemInterface
+class P003 implements ProblemInterface
 {
     /**
      * {@inheritDoc}

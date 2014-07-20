@@ -23,7 +23,7 @@ class EulerCommand extends Command
     {
         $problem = $input->getArgument('problem');
 
-        $class = sprintf('Bab\Euler\Problem\P%d', (int) $problem);
+        $class = sprintf('Bab\Euler\Problem\P%s', str_pad($problem, 3, '0', STR_PAD_LEFT));
         if (!class_exists($class)) {
             $output->writeln(sprintf('<error>No solution for problem #%d</error>', (int) $problem));
 
