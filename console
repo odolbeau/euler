@@ -5,9 +5,10 @@ set_time_limit(0);
 
 (@include_once __DIR__ . '/vendor/autoload.php') || @include_once __DIR__ . '/../../autoload.php';
 
-use Bab\Euler\P1;
+use Bab\Euler;
 use Symfony\Component\Console\Application;
 
 $application = new Application();
-$application->add(new P1);
+$application->add(new Euler\P1);
+$application->add(new Euler\P2);
 $application->run();
