@@ -48,4 +48,27 @@ class Utils
 
         return true;
     }
+
+    /**
+     * getDivisors
+     *
+     * @param int $number
+     *
+     * @return array
+     */
+    public static function getDivisors($number)
+    {
+        $max = $number;
+        $divisors = [1, $number];
+        for ($i = 2; $i < $max; $i++) {
+            if (0 === $number % $i) {
+                $result = $number / $i;
+                $divisors[] = $i;
+                $divisors[] = $result;
+                $max = $result;
+            }
+        }
+
+        return $divisors;
+    }
 }
