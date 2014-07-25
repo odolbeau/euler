@@ -69,6 +69,6 @@ class Utils
             }
         }
 
-        return $divisors;
+        return array_unique($divisors);
     }
 }
