@@ -12,7 +12,7 @@ class BigNumbers
      *
      * @return array
      */
-    public static function addition(array $prev, array $current)
+    public static function addition(array $prev, array $current, $membersInArray = 1)
     {
         $next = array();
         $restraint = 0;
@@ -23,9 +23,9 @@ class BigNumbers
             $sum = $prev[$i] + $current[$i] + $restraint;
             $restraint = 0;
             $parts = str_split($sum);
-            if (1 < count($parts)) {
+            if ($membersInArray < count($parts)) {
                 $restraint = $parts[0];
-                $sum = $parts[1];
+                $sum = implode('', array_slice($parts, 1));
             }
 
             array_unshift($next, $sum);

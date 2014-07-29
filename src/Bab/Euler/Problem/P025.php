@@ -15,14 +15,17 @@ class P025 implements ProblemInterface
         $prev = array(0);
         $current = array(1);
         $iteration = 1;
+        $membersInArray = 10;
         do {
             $output->isVeryVerbose() && $output->writeln(sprintf('Fibonnacci #%d = %s', $iteration, implode('', $current)));
 
             $iteration++;
-            $newCurrent = BigNumbers::addition($prev, $current);
+            $newCurrent = BigNumbers::addition($prev, $current, $membersInArray);
             $prev = $current;
             $current = $newCurrent;
-        } while (count($current) < 1000);
+            $last = reset($current);
+            $nbDigits = (count($current) - 1) * $membersInArray + strlen($last);
+        } while ($nbDigits < 1000);
 
         $output->isVerbose() && $output->writeln(sprintf('First Fibonnacci with 1000 digits #%d = %s', $iteration, implode('', $current)));
 
