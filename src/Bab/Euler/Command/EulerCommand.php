@@ -40,7 +40,42 @@ class EulerCommand extends Command
             '<comment>Solution for problem <info>#%d</info>: <info>%s</info>. Found in <info>%s</info></comment>',
             $problem,
             $solution,
-            $duration
+            $this->durationToString($duration)
         ));
+    }
+
+    /**
+     * durationToString
+     *
+     * @param int $duration
+     *
+     * @return string
+     */
+    protected function durationToString($duration)
+    {
+        $seconds = $duration % 60;
+        $duration = floor($duration / 60);
+        $minutes = $duration % 60;
+        $duration = floor($duration / 60);
+        $hours = $duration;
+
+        if (0 == $hours && 0 == $minutes && 0 == $seconds) {
+            return 'less than a second';
+        }
+
+        if (0 == $hours && 0 == $minutes) {
+            return sprintf('%d seconds', $seconds);
+        }
+
+        if (0 == $hours) {
+            return sprintf('%d minutes and %d seconds', $minutes, $seconds);
+        }
+
+        return sprintf(
+            '%s hours %s minutes %s seconds',
+            $hours,
+            $minutes,
+            $seconds
+        );
     }
 }
